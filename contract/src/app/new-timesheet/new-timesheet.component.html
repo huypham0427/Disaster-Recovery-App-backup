@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <nav class="sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user" routerLinkActive="active">Timesheet Submission</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-danger m-2" (click)="logoutUser()">Logout</button>
+
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-9">
+        <!-- Place your content for each section here -->
+        <div class="table">
+            <form  id = "form" (ngSubmit)="onSummit(f)"#f="ngForm">
+              <div class="mb-3">
+                <label for="site_code" class="form-label">SiteCode:</label>
+                <input type="text" class="form-control" id="site_code" name="site_code" ngModel required #fn="ngModel" >
+              </div>
+              <div class="mb-3">
+                <label for="contractorName" class="form-label">Contractor Name:</label>
+                <input type="text" class="form-control" id="contractorName" name="contractorName" ngModel required #fn="ngModel" >
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" ngModel required #fn="ngModel" >
+              </div>
+          
+              <h4>Form of Labor Entry</h4>
+              <div class="mb-3">
+                <label for="laborCode" class="form-label">Labor Code:</label>
+                <input type="text" class="form-control" id="laborCode" name="laborCode" ngModel required #fn="ngModel" >
+              </div>
+              <div class="mb-3">
+                <label for="hoursWorked" class="form-label">Hours Worked:</label>
+                <input type="number" class="form-control" id="hoursWorked" name="hoursWorked" ngModel required #fn="ngModel">
+              </div>
+              <div class="mb-3">
+                <label for="total_hours" class="form-label">Total:</label>
+                <input type="number" class="form-control" id="total_hours" name="total_hours"ngModel required #fn="ngModel" >
+              </div>
+          
+              <h4>Form of Machine Entry</h4>
+              <div class="mb-3">
+                <label for="machineCode" class="form-label">Machine Code:</label>
+                <input type="text" class="form-control" id="machineCode" name="machineCode" ngModel required #fn="ngModel" >
+              </div>
+              <div class="mb-3">
+                <label for="hoursUsed" class="form-label">Hours Used:</label>
+                <input type="number" class="form-control" id="hoursUsed" name="hoursUsed"ngModel required #fn="ngModel" >
+              </div>
+              <div class="mb-3">
+                <label for="machineTotal" class="form-label">Total:</label>
+                <input type="number" class="form-control" id="machineTotal" name="machineTotal"ngModel required #fn="ngModel" >
+              </div>
+          
+              <div class="d-grid gap-2">
+                <button type="button" class="btn btn-danger" (click)="cancel()">Clear</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

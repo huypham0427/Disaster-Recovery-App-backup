@@ -1,0 +1,132 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <nav class="sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin" routerLinkActive="active">TimeSheet  Management</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger m-2" (click)="logoutUser()">Logout</button>
+
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-9">
+      <!-- Place your content for each section here -->
+      <button class="btn btn-success position-absolute top-60 end-0" routerLink="/new">Add</button>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Job code </th>
+                <th>Hourly rate</th>
+                <th>Max hours worked</th>
+                <th>Delete</th>
+                <th>Update</th>
+          </tr>
+         
+          <br>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of service.Newprice.data;
+              let i = index;
+              let o = odd;
+              let e = even"
+              class="bg-info gap-3"
+              [ngClass]= "{'bg-info': o, 'bg-light': e}"
+              [ngStyle] = "{'color': o ? 'blue' : 'black'}"
+          > 
+            <td>{{emp.id}}</td>
+            <td >{{emp.description  }}</td>
+            <td>{{emp.jobcode}}</td>
+            <td>{{emp.hourly_rate}}</td>
+            <td>{{emp.max_hours_per_day }}</td>
+            
+            <td><button class="btn btn-danger m-2" (click)="deleteprice(emp.id)">Delete</button></td>
+            <td><button class="btn btn-warning m-2" (click)="updateprice(emp)" routerLink="/setprice">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div>
+    <div >
+      <!-- <table class="table">
+        <thead>
+          <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Job code </th>
+                <th>Hourly rate</th>
+                <th>Max hours worked</th>
+                <th>Delete</th>
+                <th>Update</th>
+          </tr>
+          <button class="btn btn-success position-absolute top-60 end-0" routerLink="/new">Add</button>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of service.Newprice.data;
+              let i = index;
+              let o = odd;
+              let e = even"
+              class="bg-info gap-3"
+              [ngClass]= "{'bg-info': o, 'bg-light': e}"
+              [ngStyle] = "{'color': o ? 'blue' : 'black'}"
+          > 
+            <td>{{emp.id}}</td>
+            <td >{{emp.description  }}</td>
+            <td>{{emp.jobcode}}</td>
+            <td>{{emp.hourly_rate}}</td>
+            <td>{{emp.max_hours_per_day }}</td>
+            
+            <td><button class="btn btn-danger m-2" (click)="deleteprice(emp.id)">Delete</button></td>
+            <td><button class="btn btn-warning m-2" (click)="updateprice(emp)" routerLink="/setprice">Update</button></td>
+          </tr>
+        </tbody>
+      </table>  -->
+
+
+      <!-- <h1 class = "text-primary" style="text-align: center;">Book list</h1>
+      <div style="text-align: center;">
+      <button  routerLink="/new">add</button>
+      <table class="styled-table" >
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th> Description</th>
+                <th>Job code </th>
+                <th>Hourly rate</th>
+                <th>Max hours worked</th>
+                <th>Delete</th>
+                <th>Update</th>
+  
+               
+              </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of service.Newprice.data;" 
+          
+         >
+          
+      
+          <td>{{emp.id}}</td>
+          <td >{{emp.description  }}</td>
+          <td>{{emp.jobcode}}</td>
+          <td>{{emp.hourly_rate}}</td>
+          <td>{{emp.max_hours_per_day }}</td>
+          
+          <td><button (click)="deleteprice(emp.id)">delete</button></td>
+          <td><button (click)="updateprice(emp)" routerLink="/setprice">update</button></td>
+           
+          
+        </tr>
+        </tbody>
+      </table> -->
+</div>
+  

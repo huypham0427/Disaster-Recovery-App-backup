@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <nav class="sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin" routerLinkActive="active">User Management</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/timecard-approval" routerLinkActive="active">Set Price</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/new" routerLinkActive="active">Add New</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-9">
+        <!-- Place your content for each section here -->
+        <div class="centered-form">
+            <form class="table" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                
+                  <label>ID</label>
+                  <input type = "number" id="id"  name ="id" formControlName="id" readonly  class="form-control mb-3 mt-3"> 
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" name="description" id="description" formControlName="description" class="form-control mb-3 mt-3"  >
+              </div>
+            <div class="mb-3">
+            <label for="jobcode" class="form-label">Job Code:</label>
+            <input type="text" name="jobcode" id="jobcode" formControlName="jobcode" class="form-control mb-3 mt-3"  >
+          </div>
+              <div class="mb-3">
+                <label for="hourly_rate" class="form-label">Hourly Rate:</label>
+                <input type="number" name="hourly_rate" id="hourly_rate"formControlName="hourly_rate" class="form-control mb-3 mt-3"  >
+              </div>
+              <div class="mb-3">
+                <label for="max_hours_per_day" class="form-label">Max hours per day:</label>
+                <input type="number" name="max_hours_per_day" id="max_hours_per_day" formControlName="max_hours_per_day"  class="form-control mb-3 mt-3"  >
+              </div>
+              <button type="submit" class="btn btn-primary">Set Price</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <nav class="sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user" routerLinkActive="active">Timesheet Submission</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/new-timesheet" routerLinkActive="active">Add New Timesheet</a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-9">
+        <!-- Place your content for each section here -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Site code</th>
+              <th>Contractor</th>
+              <th>Hours Worked</th>
+              <th>Status</th>
+              <th>
+                <button class="btn btn-danger m-2" (click)="logoutUser()">Logout</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let timecard of service.timesheet.data;
+                let i = index;
+                let o = odd;
+                let e = even"
+                class="bg-info gap-3"
+                [ngClass]= "{'bg-info': o, 'bg-light': e}"
+                [ngStyle] = "{'color': o ? 'blue' : 'black'}"
+            > 
+            <td>{{ timecard.site_code }}</td>
+               <td>{{ timecard.contractor_name }}</td>
+              <td>{{ timecard.total_hours }}</td>
+              <td>{{ timecard.pending }}</td>
+              <!-- site_code: string;
+              contractor_name: string;
+              total_hours: number;
+              total_amount:number;
+              status: string; -->
+              <td>
+             
+              </td>
+            </tr>
+          </tbody>
+        </table> 
+        
+      </div>
+    </div>
+  </div>

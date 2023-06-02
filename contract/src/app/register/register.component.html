@@ -1,0 +1,27 @@
+<div class="container w-50">
+    <h3>Register</h3>
+    <form  (ngSubmit)="onSummit(f)"#f="ngForm">
+        <div class="form-group">
+            <label>ID</label>
+            <input type = "number" id="id"  name ="id" ngModel disabled class="form-control mb-3 mt-3"> 
+        </div> 
+           
+        <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text"  id="username"  name ="username" class="form-control mb-3 mt-3"  ngModel required #fn="ngModel">
+        </div>
+        <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password"  name ="password" class="form-control mb-3 mt-3"  ngModel required #fn="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email"  name ="email" class="form-control mb-3 mt-3"  ngModel required #fn="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="contracting_type">Role</label>
+            <input type="text" id="contracting_type"  name ="contracting_type" class="form-control mb-3 mt-3"  ngModel required #fn="ngModel">
+            </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>

@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <nav class="sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin" routerLinkActive="active">TimeSheet  Management</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger m-2" (click)="logoutUser()">Logout</button>
+
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-9">
+      <!-- Place your content for each section here -->
+      <button class="btn btn-success position-absolute top-60 end-0" routerLink="/new">Add</button>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th> username</th>
+            <th>Email </th>
+            <th>Contracting type</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of service.profile.data;
+              let i = index;
+              let o = odd;
+              let e = even"
+              class="bg-info gap-3"
+              [ngClass]= "{'bg-info': o, 'bg-light': e}"
+              [ngStyle] = "{'color': o ? 'blue' : 'black'}"
+          >
+            <td>{{emp.id}}</td>
+            <td >{{emp.username  }}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.contracting_type}}</td>
+            
+            <td><button class="btn btn-danger m-2" (click)="deletecon(emp.id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================ -->
+
+  
+  

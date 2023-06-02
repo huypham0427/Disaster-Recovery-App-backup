@@ -1,0 +1,66 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <nav class="sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin" routerLinkActive="active">Timesheet Management</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/price" routerLinkActive="active">Price</a>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-danger m-2" (click)="logoutUser()">Logout</button>
+    
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-9">
+        <!-- Place your content for each section here -->
+        <form class="table" (ngSubmit)="onSummit(f)"#f="ngForm">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input class="form-control" type="text" id ="id" name="id" ngModel disabled>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input class="form-control" type="description" id ="description" name="description" ngModel required minLength="4">
+                <!-- <div class="text-danger" *ngIf="bt.errors && bt.touched">
+                    <span *ngIf="bt.errors['required']">Book Title is required</span>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="jobcode">Job Code</label>
+                <input class="form-control" type="text" id ="jobcode" name="jobcode" ngModel required minLength="4">
+                <!-- <div class="text-danger" *ngIf="jc.errors && jc.touched">
+                    <span *ngIf="jc.errors['required']">Author is required</span>
+                </div> -->
+            </div>
+            <div class="form-group">
+              <label for="hourly_rate">Hourly rate</label>
+              <input class="form-control" type="number" id ="hourly_rate" name="hourly_rate" ngModel required >
+              <!-- <div class="text-danger" *ngIf="jc.errors && jc.touched">
+                  <span *ngIf="jc.errors['required']">Author is required</span>
+              </div> -->
+          </div>
+          <div class="form-group">
+            <label for="max_hours_per_day">Max hours per day</label>
+            <input class="form-control" type="number" id ="max_hours_per_day" name="max_hours_per_day" ngModel required >
+            <!-- <div class="text-danger" *ngIf="jc.errors && jc.touched">
+                <span *ngIf="jc.errors['required']">Author is required</span>
+            </div> -->
+        </div>
+        
+            <br>
+            <div class="form-group">
+                <button class="btn btn-primary w-100" type="submit">Submit</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  
